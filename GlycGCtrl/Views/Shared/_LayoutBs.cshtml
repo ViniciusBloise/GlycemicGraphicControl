@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width" />
 
         @Styles.Render("~/Content/bootstrap/css")
+        @Styles.Render("~/Content/SiteBs.css")
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
@@ -23,21 +24,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    <nav class="navbar">
-                        <div class="navbar-inner">
-                            <ul id="menu" class="nav">
-                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                                <li>@Html.ActionLink("About", "About", "Home")</li>
-                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                            </ul>
-                         </div>
+                    <nav>
+                        <ul id="menu" class="nav nav-pills pull-right">
+                            @Html.LiLink("Home", "Index", "Home")
+                            @Html.LiLink("About", "About", "Home")
+                            @Html.LiLink("Contact", "Contact", "Home")
+                        </ul>
                     </nav>
                 </div>
             </div>
         </header>
 
-        <div id="body" class="container-fluid">
-            <div class="row-fluid">
+        <div id="body" class="container">
+            <div class="row">
             @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
