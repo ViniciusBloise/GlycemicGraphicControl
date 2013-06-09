@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\packages\Mvc4Futures.4.0.20710.0\lib\net40\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -44,6 +50,18 @@
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -75,14 +93,6 @@
     <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
@@ -111,16 +121,138 @@
       <Private>True</Private>
       <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.1\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BootstrapBundleConfig.cs" />
+    <Compile Include="App_Start\ExampleLayoutsRouteConfig.cs" />
+    <Compile Include="BootstrapSupport\ControlGroupExtensions.cs" />
+    <Compile Include="BootstrapSupport\HtmlHelpers\GlyphIcons.cs" />
+    <Compile Include="BootstrapSupport\HtmlHelpers\Paging.cs" />
+    <Compile Include="BootstrapSupport\ViewHelperExtensions.cs" />
+    <Compile Include="Controllers\BootstrapBaseController.cs" />
+    <Compile Include="NavigationRoutes\INavigationRouteFilter.cs" />
+    <Compile Include="NavigationRoutes\NamedRoute.cs" />
+    <Compile Include="NavigationRoutes\NavigationExtensions.cs" />
+    <Compile Include="NavigationRoutes\NavigationRouteConfigurationExtensions.cs" />
+    <Compile Include="NavigationRoutes\NavigationRouteFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
+    <Content Include="Content\body.css" />
+    <Content Include="Content\bootstrap-mvc-validation.css" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.nuget.readme.txt" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\bootstrap\js\bootstrap-alert.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-button.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-carousel.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-collapse.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-dropdown.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-modal.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-popover.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-scrollspy.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-tab.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-tooltip.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-transition.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-typeahead.js" />
+    <Content Include="Content\bootstrap\js\tests\index.html" />
+    <Content Include="Content\bootstrap\js\tests\unit\bootstrap-alert.js" />
+    <Content Include="Content\bootstrap\js\tests\unit\bootstrap-button.js" />
+    <Content Include="Content\bootstrap\js\tests\unit\bootstrap-collapse.js" />
+    <Content Include="Content\bootstrap\js\tests\unit\bootstrap-dropdown.js" />
+    <Content Include="Content\bootstrap\js\tests\unit\bootstrap-modal.js" />
+    <Content Include="Content\bootstrap\js\tests\unit\bootstrap-popover.js" />
+    <Content Include="Content\bootstrap\js\tests\unit\bootstrap-scrollspy.js" />
+    <Content Include="Content\bootstrap\js\tests\unit\bootstrap-tab.js" />
+    <Content Include="Content\bootstrap\js\tests\unit\bootstrap-tooltip.js" />
+    <Content Include="Content\bootstrap\js\tests\unit\bootstrap-transition.js" />
+    <Content Include="Content\bootstrap\js\tests\unit\bootstrap-typeahead.js" />
+    <Content Include="Content\bootstrap\js\tests\vendor\jquery.js" />
+    <Content Include="Content\bootstrap\js\tests\vendor\qunit.css" />
+    <Content Include="Content\bootstrap\js\tests\vendor\qunit.js" />
+    <Content Include="Content\google-code-prettify\prettify.css" />
+    <Content Include="Content\google-code-prettify\prettify.js" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\html5shiv.js" />
+    <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-migrate-1.1.1.js" />
+    <Content Include="Scripts\jquery-migrate-1.1.1.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive-custom-for-bootstrap.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\bootstrap\js\README.md" />
+    <None Include="Content\bootstrap\less\accordion.less" />
+    <None Include="Content\bootstrap\less\alerts.less" />
+    <None Include="Content\bootstrap\less\badges.less" />
+    <None Include="Content\bootstrap\less\bootstrap.less" />
+    <None Include="Content\bootstrap\less\breadcrumbs.less" />
+    <None Include="Content\bootstrap\less\button-groups.less" />
+    <None Include="Content\bootstrap\less\buttons.less" />
+    <None Include="Content\bootstrap\less\carousel.less" />
+    <None Include="Content\bootstrap\less\close.less" />
+    <None Include="Content\bootstrap\less\code.less" />
+    <None Include="Content\bootstrap\less\component-animations.less" />
+    <None Include="Content\bootstrap\less\dropdowns.less" />
+    <None Include="Content\bootstrap\less\forms.less" />
+    <None Include="Content\bootstrap\less\grid.less" />
+    <None Include="Content\bootstrap\less\hero-unit.less" />
+    <None Include="Content\bootstrap\less\labels.less" />
+    <None Include="Content\bootstrap\less\layouts.less" />
+    <None Include="Content\bootstrap\less\mixins.less" />
+    <None Include="Content\bootstrap\less\modals.less" />
+    <None Include="Content\bootstrap\less\navbar.less" />
+    <None Include="Content\bootstrap\less\navs.less" />
+    <None Include="Content\bootstrap\less\pager.less" />
+    <None Include="Content\bootstrap\less\pagination.less" />
+    <None Include="Content\bootstrap\less\popovers.less" />
+    <None Include="Content\bootstrap\less\progress-bars.less" />
+    <None Include="Content\bootstrap\less\reset.less" />
+    <None Include="Content\bootstrap\less\responsive.less" />
+    <None Include="Content\bootstrap\less\scaffolding.less" />
+    <None Include="Content\bootstrap\less\sprites.less" />
+    <None Include="Content\bootstrap\less\tables.less" />
+    <None Include="Content\bootstrap\less\thumbnails.less" />
+    <None Include="Content\bootstrap\less\tooltip.less" />
+    <None Include="Content\bootstrap\less\type.less" />
+    <None Include="Content\bootstrap\less\utilities.less" />
+    <None Include="Content\bootstrap\less\variables.less" />
+    <None Include="Content\bootstrap\less\wells.less" />
     <None Include="packages.config" />
+    <None Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="views\shared\Create.cshtml" />
+    <None Include="views\shared\Details.cshtml" />
+    <None Include="views\shared\Index.cshtml" />
+    <None Include="views\shared\_alerts.cshtml" />
+    <None Include="views\shared\_BootstrapLayout.basic.cshtml" />
+    <None Include="views\shared\_BootstrapLayout.empty.cshtml" />
+    <None Include="views\shared\_BootstrapLayout.narrow.cshtml" />
+    <None Include="views\shared\_html5shiv.cshtml" />
+    <None Include="views\shared\_validationSummary.cshtml" />
+    <None Include="views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GlycGCtrl\GlycGCtrl.csproj">

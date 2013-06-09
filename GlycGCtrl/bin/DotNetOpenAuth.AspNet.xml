@@ -336,6 +336,11 @@
             The query access token.
             </returns>
         </member>
+        <member name="P:DotNetOpenAuth.AspNet.Clients.MicrosoftClient.AppId">
+            <summary>
+            Gets the identifier for this client as it is registered with Microsoft.
+            </summary>
+        </member>
         <member name="M:DotNetOpenAuth.AspNet.Clients.WindowsLiveClient.#ctor(System.String,System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:DotNetOpenAuth.AspNet.Clients.WindowsLiveClient"/> class.
