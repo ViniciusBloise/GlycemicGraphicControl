@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>bootstrap</id>
+    <version>1.0.0</version>
+    <title>bootstrap</title>
+    <authors>Daniel Miller</authors>
+    <owners>Daniel Miller</owners>
+    <projectUrl>http://blog.webonweboff.com/2012/05/nuget-package-twitter-bootstrap.html</projectUrl>
+    <iconUrl>http://twitter.github.com/bootstrap/assets/ico/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Twitter Bootstrap: Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions. Includes Google Code Prettify.</description>
+    <releaseNotes>First version</releaseNotes>
+    <copyright>Copyright 2012</copyright>
+    <language />
+    <tags>Twitter bootstrap dotless .less css html5 css3 Google Code Prettify</tags>
+  </metadata>
+</package>
